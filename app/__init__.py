@@ -1,15 +1,13 @@
-# Import flask and template operators
+# Import di flask e degli operatori di templating
 from flask import Flask, render_template
 
-# Define the WSGI application object
+# Definizione oggetto WSGI
 app = Flask(__name__)
 
-# Configurations
+# Configurazioni
 app.config.from_object('config')
 
-# Sample HTTP error handling
+# HTTP error handling
 @app.errorhandler(404)
 def not_found(error):
     return render_template('404.html'), 404
-
-
