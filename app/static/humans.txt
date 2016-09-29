@@ -1,0 +1,23 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAMS */
+	Energee3 srl
+	Location: Reggio Emilia (RE) - ITALY
+	Site: http://www.energee3.com
+
+	Back End Developers: Alessandro Cucci,
+	Front End Developers: Alessandro Cucci,
+
+
+/* THANKS */
+	Giovacchino Tesi, Responsabile di Produzione @ Energee3 srl.
+	You, for reading this.
+
+
+/* SITE */
+	Standards: HTML5, CSS3, W3C (as much as possible)
+	Core: Python 2.7 and Flask 0.11.1
+	Components: Bootstrap, MDB
+	Software: Atom
