@@ -35,7 +35,7 @@
 			    "hideMethod": "fadeOut"
 			};
 			toastr.options.onclick = function() { window.location.assign("/docs"); };
-			toastr.success('Scopri come abbiamo sviluppato questo sito web!', 'How it is made');
+			toastr.success('Scopri come abbiamo sviluppato il nostro sito!', 'How it is made');
 		  }
 	});
 })();
