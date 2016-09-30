@@ -3,6 +3,7 @@ from flask import Flask, render_template
 
 # Import a module / component using its blueprint handler variable (mod_auth)
 from app.documentazione.controller import docs
+from app.main.controller import main
 
 # Definizione oggetto WSGI
 app = Flask(__name__)
@@ -17,3 +18,4 @@ def not_found(error):
 
 # Register blueprint(s)
 app.register_blueprint(docs)
+app.register_blueprint(main)
