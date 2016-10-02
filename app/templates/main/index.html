@@ -100,27 +100,8 @@
             <div class="collapse navbar-toggleable-xs" id="collapseEx">
                 <!--Navbar Brand-->
                 <a class="navbar-brand" href="#" target="_blank">PyRE</a>
-                <!--Links-->
-                <ul class="nav navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Prossimo Evento</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Archivio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Call for Papers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Chi Siamo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contatti</a>
-                    </li>
-                </ul>
+                <!--Menu-->
+                {% include "main/menu.html" %}
                 <!--Navbar icons-->
                 <ul class="nav navbar-nav nav-flex-icons">
                     <li class="nav-item">
@@ -142,13 +123,18 @@
         <div class="full-bg-img flex-center">
             <ul>
                 <li>
+                    <div class="flex-center">
+                      <img style="max-width: 100px; text-align: center;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" alt="Python Logo">
+                    </div>
+                </li>
+                <li>
                     <h1 class="h1-responsive wow fadeInDown" data-wow-delay="0.2s">Python Reggio Emilia</h1></li>
                 <li>
                     <p class="wow fadeInDown">Il primo Python User Group della Food Valley</p>
                 </li>
                 <li>
-                    <a href="http://mdbootstrap.com/getting-started/" class="btn btn-primary btn-lg wow fadeInLeft" data-wow-delay="0.2s">Partecipa al Prossimo Evento</a>
-                    <a href="#contact" class="btn btn-default btn-lg wow fadeInRight" data-wow-delay="0.2s">Dove Siamo</a>
+                    <a href="http://mdbootstrap.com/getting-started/" class="btn btn-primary btn-lg wow fadeInLeft" data-wow-delay="0.2s"><i class="fa fa-heart" aria-hidden="true"></i> Partecipa al Prossimo Evento</a>
+                    <a href="#contact" class="btn btn-default btn-lg wow fadeInRight" data-wow-delay="0.2s"><i class="fa fa-map-marker"></i> Dove Siamo</a>
                 </li>
             </ul>
         </div>
@@ -167,7 +153,7 @@
 
             <p>Python è un linguaggio multi-paradigma, che fa della dinamicità, semplicità e flessibilità i suoi principali obiettivi.
                 Supporta il paradigma object oriented, la programmazione strutturata e molte caratteristiche di programmazione funzionale.</p>
-            <p>Il PyRE (Python Reggio Emilia) è un gruppo di appassionati e sviluppatori che vogliono spiegare, discutere e condividere idee,
+            <p>Il PyRE (Python Reggio Emilia) è un gruppo di appassionati e sviluppatori che vogliono divulgare, discutere e condividere idee,
                 progetti e innovazioni tecnologiche basate su questo linguaggio di programmazione.</p>
 
         </section>
@@ -373,7 +359,7 @@
                         <label for="form3">Password</label>
                     </div>
                     <div class="text-xs-center">
-                        <button class="btn btn-primary btn-lg">Login</button>
+                        <button class="btn btn-primary btn-lg"><i class="fa fa-sign-in left"></i> Login</button>
                     </div>
                 </div>
 
@@ -423,18 +409,17 @@
 
             var var_mapoptions = {
                 center: var_location,
-
                 zoom: 14
             };
+
+            var var_map = new google.maps.Map(document.getElementById("map-container"),
+                var_mapoptions);
 
             var var_marker = new google.maps.Marker({
                 position: var_location,
                 map: var_map,
                 title: "New York"
             });
-
-            var var_map = new google.maps.Map(document.getElementById("map-container"),
-                var_mapoptions);
 
             var_marker.setMap(var_map);
 

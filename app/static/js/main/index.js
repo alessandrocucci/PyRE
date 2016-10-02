@@ -23,6 +23,7 @@
 	$(window).scroll(function() {
 		if ($(window).scrollTop() >= (($(document).height() - $(window).height()) - $('.call-to-action').innerHeight())) {
 			toastr.options = {
+				"closeButton": true,
 			    "positionClass": "toast-bottom-right", // toast-top-right / toast-top-left / toast-bottom-right / toast-bottom-left
 				"preventDuplicates": true,
 			    "showDuration": "7000", // in milliseconds
@@ -38,4 +39,7 @@
 			toastr.success('Scopri come abbiamo sviluppato il nostro sito!', 'How it is made');
 		  }
 	});
+
+	// Switch on and off modals
+	// $('#myModal').modal('toggle');
 })();
