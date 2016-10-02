@@ -124,7 +124,9 @@
                 <!--Navbar icons-->
                 <ul class="nav navbar-nav nav-flex-icons">
                     <li class="nav-item">
-                        <a class="btn btn-elegant"><i class="fa fa-sign-in left"></i> Accedi</a>
+                        <button type="button" class="btn btn-elegant" data-toggle="modal" data-target="#login">
+                            <i class="fa fa-sign-in left"></i> Accedi</a>
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -232,13 +234,14 @@
                 <div class="col-md-4">
                     <ul class="text-xs-center">
                         <li class="wow fadeInUp" data-wow-delay="0.2s"><i class="fa fa-map-marker"></i>
-                            <p>Centro Commerciale "Il Volo"</p>
+                            <p>Centro Commerciale "Il Volo"<br>
+                            c/o Sede Operativa Energee3 srl</p>
                             <p>Largo Giambellino</p>
                             <p>Reggio Emilia (RE) - ITALY</p>
                         </li>
 
                         <li class="wow fadeInUp" data-wow-delay="0.4s"><i class="fa fa-envelope"></i>
-                            <p>pyre@gmail.com</p>
+                            <p>info@pyre.it</p>
                         </li>
                     </ul>
                 </div>
@@ -263,7 +266,10 @@
                 <div class="col-md-3 offset-md-1">
                     <h5 class="title">PyRE - Python Reggio Emilia</h5>
 
-                    <p>Material Design for Bootstrap (MDB) is a powerful Material Design UI KIT for most popular HTML, CSS, and JS framework - Bootstrap.</p>
+                    <p>Siamo un gruppo di pythonisti di Reggio Emilia e dintorni a cui piace incontrarsi per condividere
+                    idee e imparare nuovi trick con il nostro linguaggio di programmazione preferito. </p>
+                    <p>Vuoi rimanere aggiornato sulle nostre attività?</p>
+                    <button type="button" class="btn btn-elegant btn-news-register"><i class="fa fa-facebook left"></i> Iscriviti alla Newsletter</button>
                 </div>
                 <!--/.First column-->
 
@@ -330,7 +336,7 @@
         <!--Copyright-->
         <div class="footer-copyright">
             <div class="container-fluid">
-                © 2016 Copyright: <a href="#"> PyRE - Python Reggio Emilia </a>
+                © 2016 Copyright: <a href="#"> PyRE - Python Reggio Emilia User Group</a>
 
             </div>
         </div>
@@ -338,6 +344,56 @@
 
     </footer>
     <!--/.Footer-->
+
+
+        <!-- Login Modal -->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header text-xs-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3><i class="fa fa-user"></i> Accedi a PyRE</h3>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="md-form">
+                        <i class="fa fa-envelope prefix"></i>
+                        <input type="text" id="form2" class="form-control">
+                        <label for="form2">Email</label>
+                    </div>
+
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix"></i>
+                        <input type="password" id="form3" class="form-control">
+                        <label for="form3">Password</label>
+                    </div>
+                    <div class="text-xs-center">
+                        <button class="btn btn-primary btn-lg">Login</button>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer">
+                    <div class="container text-xs-center">
+                        <p>Prima volta? <button type="button" class="btn btn-default" data-dismiss="modal">Registrati</button></p>
+                        <p><a href="#">Password</a> dimenticata?</p>
+                    </div>
+                    <div class="container text-xs-center">
+                        <h4>Oppure, accedi con:</h4>
+                        <button type="button" class="btn btn-fb" data-dismiss="modal"><i class="fa fa-facebook left"></i> Facebook</button>
+                        <button type="button" class="btn btn-gplus" data-dismiss="modal"><i class="fa fa-google left"></i> Google</button>
+                    </div>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- /.Live preview-->
 
 
     <!-- SCRIPTS -->

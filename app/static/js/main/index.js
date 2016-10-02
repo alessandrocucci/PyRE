@@ -6,16 +6,16 @@
 		li_button = document.querySelector('.btn-li-share'),
 		gplus_button = document.querySelector('.btn-gplus-share');
 
-	fb_button.onclick = function(e){
+	fb_button.onclick = function(){
 		window.open("https://www.facebook.com/sharer/sharer.php?u=www.pyre.it");
 	};
-	tw_button.onclick = function(e){
+	tw_button.onclick = function(){
 		window.open("https://twitter.com/home?status=www.pyre.it");
 	};
-	li_button.onclick = function(e){
+	li_button.onclick = function(){
 		window.open("https://www.linkedin.com/shareArticle?mini=true&url=www.pyre.it&title=Python%20Reggio%20Emilia&summary=Iscriviti%20e%20partecipa%20agli%20eventi%20del%20Python%20Reggio%20Emilia%20User%20Group&source=");
 	};
-	gplus_button.onclick = function(e){
+	gplus_button.onclick = function(){
 		window.open("https://plus.google.com/share?url=www.pyre.it");
 	};
 
