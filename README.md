@@ -2,7 +2,7 @@
   Codice sorgente del sito web del PyRE (www.pyre.it)
 
 
-> Se vuoi aiutare nello sviluppo del sito, forka questo repo e sporcati le mani 
+> Se vuoi aiutare nello sviluppo del sito, forka questo repo e sporcati le mani
 
 
 
@@ -18,24 +18,16 @@ Questo repo contiene:
   * Tutto il codice backend
   * Tutti i file statici
   * NON contiene le configurazioni
-* Virtual Env
-  * Per eseguire il codice in locale
 * Requirements.txt (per installare tutti i pacchetti necessari)
 
 ### Come lo installo
 Semplice, basta eseguire nell'ordine:
 - git clone https://github.com/alessandrocucci/PyRE.git
 - cd PyRE
-- source env/bin/activate
+- virtualenv -p /usr/bin/python2.7 venv      # occhio all'eseguibile di python 2.7
+- source venv/bin/activate
+- pip install -r requirements.txt
 - python run.py
 
 ### Todo's
  - Quasi tutto
-
-
- 
-
-
-
-
-
