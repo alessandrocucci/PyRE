@@ -1,6 +1,6 @@
 from flask import render_template, Blueprint
 
-dashboard = Blueprint('main', __name__)
+dashboard = Blueprint('dashboard', __name__)
 
 @dashboard.route('/dashboard')
 def index():
