@@ -203,6 +203,133 @@
         </section>
         <!--/Section: Next Event-->
 
+<!--Section: Team v.3-->
+<section class="section team-section">
+
+    <!--Section heading-->
+    <h1 class="section-heading">Our amazing team</h1>
+    <!--Section sescription-->
+    <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+
+    <!--First row-->
+    <div class="row center-on-small-only">
+
+        <!--First column-->
+        <div class="col-lg-6 col-md-12 m-b-r">
+
+            <div class="col-md-6">
+                <div class="avatar">
+                    <img src="http://mdbootstrap.com/images/avatars/img%20(9).jpg">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h4>John Doe</h4>
+                <h5>Web Developer</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab.</p>
+
+                <!--Facebook-->
+                <a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a>
+                <!--Twitter-->
+                <a class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a>
+                <!--GitHub-->
+                <a class="icons-sm git-ic"><i class="fa fa-github"> </i></a>
+            </div>
+
+        </div>
+        <!--/First column-->
+
+        <!--Second column-->
+        <div class="col-lg-6 col-md-12 m-b-r">
+
+            <div class="col-md-6">
+                <div class="avatar">
+                    <img src="http://mdbootstrap.com/images/avatars/img%20(10).jpg">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h4>Maria Kate</h4>
+                <h5>Photographer</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab.</p>
+
+                <!--Facebook-->
+                <a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a>
+                <!--Pinterest-->
+                <a class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a>
+                <!--Instagram-->
+                <a class="icons-sm ins-ic"><i class="fa fa-instagram"> </i></a>
+            </div>
+
+        </div>
+        <!--/Second column-->
+
+    </div>
+    <!--/First row-->
+
+    <div style="height:50px" class="hidden-md-down"></div>
+
+    <!--Second row-->
+    <div class="row center-on-small-only">
+
+        <!--Third column-->
+        <div class="col-lg-6 col-md-12 m-b-r">
+
+            <div class="col-md-6">
+                <div class="avatar">
+                    <img src="http://mdbootstrap.com/images/avatars/img%20(11).jpg">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h4>Anna Deynah</h4>
+                <h5>Web Designer</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab.</p>
+
+                <!--Facebook-->
+                <a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a>
+                <!--Twitter-->
+                <a class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a>
+                <!--Dribbble-->
+                <a class="icons-sm drib-ic"><i class="fa fa-dribbble"> </i></a>
+            </div>
+
+
+        </div>
+        <!--/Third column-->
+
+        <!--Fourth column-->
+        <div class="col-lg-6 col-md-12 m-b-r">
+
+            <div class="col-md-6">
+                <div class="avatar">
+                    <img src="http://mdbootstrap.com/images/avatars/img%20(1).jpg">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h4>Sarah Melyah</h4>
+                <h5>Front-end Developer</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab.</p>
+
+                <!--Google +-->
+                <a class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a>
+                <!--Facebook-->
+                <a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a>
+                <!--GitHub-->
+                <a class="icons-sm git-ic"><i class="fa fa-github"> </i></a>
+
+            </div>
+
+        </div>
+        <!--/Fourth column-->
+    </div>
+    <!--/Second row-->
+
+</section>
+<!--/Section: Team v.3-->
+
+
         <div class="divider-new">
             <h2 class="h2-responsive wow fadeInUp">Contatti</h2>
         </div>
@@ -246,54 +373,12 @@
     <!--/.Footer-->
 
 
-        <!-- Login Modal -->
-    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <!--Content-->
-            <div class="modal-content">
-                <!--Header-->
-                <div class="modal-header text-xs-center">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h3><i class="fa fa-user"></i> Accedi a PyRE</h3>
-                </div>
+    <!-- Login Modal -->
+    {% include "main/modals/login.html" %}
 
-                <!--Body-->
-                <div class="modal-body">
-                    <div class="md-form">
-                        <i class="fa fa-envelope prefix"></i>
-                        <input type="text" id="form2" class="form-control">
-                        <label for="form2">Email</label>
-                    </div>
+    <!-- Newsletter Modal -->
+    {% include "main/modals/newsletter.html" %}
 
-                    <div class="md-form">
-                        <i class="fa fa-lock prefix"></i>
-                        <input type="password" id="form3" class="form-control">
-                        <label for="form3">Password</label>
-                    </div>
-                    <div class="text-xs-center">
-                        <button class="btn btn-primary btn-lg"><i class="fa fa-sign-in left"></i> Login</button>
-                    </div>
-                </div>
-
-                <!--Footer-->
-                <div class="modal-footer">
-                    <div class="container text-xs-center">
-                        <p>Prima volta? <button type="button" class="btn btn-default" data-dismiss="modal">Registrati</button></p>
-                        <p><a href="#">Password</a> dimenticata?</p>
-                    </div>
-                    <div class="container text-xs-center">
-                        <h4>Oppure, accedi con:</h4>
-                        <button type="button" class="btn btn-fb" data-dismiss="modal"><i class="fa fa-facebook left"></i> Facebook</button>
-                        <button type="button" class="btn btn-gplus" data-dismiss="modal"><i class="fa fa-google left"></i> Google</button>
-                    </div>
-                </div>
-            </div>
-            <!--/.Content-->
-        </div>
-    </div>
-    <!-- /.Live preview-->
 
 
     <!-- SCRIPTS -->
