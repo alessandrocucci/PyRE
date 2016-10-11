@@ -35,7 +35,7 @@
 			    "showMethod": "fadeIn",
 			    "hideMethod": "fadeOut"
 			};
-			toastr.options.onclick = function() { window.location.assign("/docs"); };
+			toastr.options.onclick = function() { window.location.assign("https://github.com/alessandrocucci/PyRE"); };
 			toastr.success('Scopri come abbiamo sviluppato il nostro sito!', 'How it is made');
 		  }
 	});
