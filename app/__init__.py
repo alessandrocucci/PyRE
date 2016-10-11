@@ -5,13 +5,19 @@ from flask import Flask, render_template
 from app.documentazione.controller import docs
 from app.main.controller import main
 from app.dashboard.controller import dashboard
-from app.auth.controller import auth
+
+# Inizializzo LoginManager
+from flask.ext.login import LoginManager
+
+login_manager = LoginManager()
 
 # Definizione oggetto WSGI
 app = Flask(__name__)
 
 # Configurazioni
 app.config.from_object('config')
+login_manager.init_app(app)
+
 
 # HTTP error handling
 @app.errorhandler(404)
@@ -22,4 +28,3 @@ def not_found(error):
 app.register_blueprint(docs)
 app.register_blueprint(main)
 app.register_blueprint(dashboard)
-app.register_blueprint(auth)
