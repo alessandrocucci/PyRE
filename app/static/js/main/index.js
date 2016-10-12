@@ -40,6 +40,25 @@
 		  }
 	});
 
+	var login_modal = $("#login");
+	login_modal.on('show.bs.modal', function(){
+		var login_form = document.forms["login-form"];
+		$(document).on('submit', login_form, function(e) {
+			if (!login_form["email"].value){
+				login_form["email"].classList.add("invalid");
+				e.preventDefault();
+			}
+			if (!login_form["password"].value){
+				login_form["password"].classList.add("invalid");
+				e.preventDefault();
+			}
+		});
+	});
+
+
+
+
+
 	// Switch on and off modals
 	// $('#myModal').modal('toggle');
 })();

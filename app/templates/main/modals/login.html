@@ -2,7 +2,8 @@
     <div class="modal-dialog" role="document">
         <!--Content-->
         <div class="modal-content">
-            <form method=post action="{{ url_for('main.login') }}">
+            <form method="post" action="{{ url_for('main.login') }}" name="login-form">
+            {{ form.csrf_token }}
             <!--Header-->
             <div class="modal-header text-xs-center">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -15,7 +16,7 @@
             <div class="modal-body">
                 <div class="md-form">
                     <i class="fa fa-envelope prefix"></i>
-                    {{ form.email }}
+                    {{ form.email(class_="validate") }}
                     <label for="form2">Email</label>
                 </div>
 
@@ -25,7 +26,7 @@
                     <label for="form3">Password</label>
                 </div>
                 <div class="text-xs-center">
-                    <button class="btn btn-primary btn-lg"><i class="fa fa-sign-in left"></i> Login</button>
+                    <button class="btn btn-primary btn-lg" name="submit" type="submit"><i class="fa fa-sign-in left"></i> Accedi</button>
                 </div>
                 </form>
             </div>

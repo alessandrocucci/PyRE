@@ -15,7 +15,9 @@ def login():
     form = LoginForm(request.form)
     if request.method == 'POST':
         if form.validate():
-            flash("That's good")
+            # controlla login
+            pass
         else:
-            flash("Not Good")
+            # non sei autenticato
+            pass
     return redirect(url_for('main.index'))
