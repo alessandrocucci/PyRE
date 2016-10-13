@@ -10,14 +10,7 @@ def index():
     return render_template('main/index.html', form=login_form)
 
 
-@main.route('/login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm(request.form)
-    if request.method == 'POST':
-        if form.validate():
-            # controlla login
-            pass
-        else:
-            # non sei autenticato
-            pass
-    return redirect(url_for('main.index'))
+@main.route('/callforpapers', methods=['GET', 'POST'])
+def callforpapers():
+    login_form = LoginForm()
+    return render_template('main/callforpapers.html', form=login_form)
