@@ -97,8 +97,18 @@ a:focus {
   text-decoration: none;
   color:#696E74;
 }
+
 .navbar {
 	border: 0;
+	background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
 }
 
 .navbar.solid {
@@ -237,6 +247,33 @@ input {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+/* CALL FOR PAPERS */
+#call {
+	background-image: url(../img/main/speaker.jpg);
+	padding-top: 150px;
+	padding-bottom: 150px;
+	min-height: 600px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center top;
+	width: 100%;
+	color: black;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.transparent {
+    background:rgba(255,255,255,0.5);
 }
 
 #sep h4 {

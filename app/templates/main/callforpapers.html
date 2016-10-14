@@ -33,21 +33,25 @@
   <body>
   <!--Menu-->
   {% include "main/menu.html" %}
-
+    <div id="call">
+      <div class="container transparent">
+        <div class="row centered">
+          <div class="col-md-8 col-md-offset-2">
+            <h1>VIENI A DIRE LA TUA!</h1>
+            <h2>Diventa Speaker del PyRE</h2>
+          </div><!--/col-md-8-->
+        </div>
+      </div>
+    </div><!--/sep-->
     <div class="container ptb">
       <div class="row">
-        <div class="col-md-6">
-          <h2>Vuoi diventare un nostro SPEAKER?</h2>
-          <p class="mt">Il <b>Python Reggio Emilia User Group</b> è nato con lo scopo di essere un <b>luogo di incontro</b> per
-              tutti i professionisti, studenti, e semplici curiosi che usano, o che vorrebbero usare, Python nei loro progetti.<br>
-              Ci scambiamo <b>idee</b>, illustriamo <b>best practices</b>, creiamo tutorial,
-               organizziamo workshop e gare di programmazione, ma per continuare a crescere abbiamo bisogno sempre di nuovi stimoli.</p>
-        <hr>
-        <h4>Se vuoi proporci un <b>talk</b>, o magari un <b>tutorial</b> su un argomento specifico, o addirittura tenere un vero e proprio <b>workshop</b>, scrivici!</h4>
-        </div>
-        <div class="col-md-6">
-          {% include "forms/callforpapers.html" %}
-        </div>
+        <div class="col-md-12 centered">
+
+        <h2>Compila il seguente form per proporci il tuo <b>Talk</b></h2>
+            <h4>Ti contatteremo per i dettagli appena possibile!</h4>
+
+        {% include "forms/callforpapers.html" %}
+            </div>
       </div><!--/row-->
     </div><!--/container-->
 
