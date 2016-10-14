@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i> HOME</a></li>
-        <li><a href="/next"><i class="fa fa-calendar" aria-hidden="true"></i> PROSSIMO INCONTRO</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#provvisorio"><i class="fa fa-calendar" aria-hidden="true"></i> PROSSIMO INCONTRO</a></li>
         <li><a href="/callforpapers"><i class="fa fa-pencil" aria-hidden="true"></i> CALL FOR PAPERS</a></li>
         <li><a href="/contatti"><i class="fa fa-map-marker" aria-hidden="true"></i> CONTATTI</a></li>
 
@@ -23,3 +23,22 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div class="modal fade" id="provvisorio" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h3>Stiamo preparando il nostro primo incontro!</h3>
+          <p>Il PyRE è un gruppo nato da pochissimo tempo, c'è tanto da fare e poca gente per farla.<br>
+              Tuttavia, siamo intenzionati a partire con il piede giusto e il prima possibile,
+              sia per farci conoscere dal vivo, sia per raccogliere idee, consigli, critiche e pareri.<br>
+              Per rimanere aggiornato, partecipare attivamente all'organizzazione, o essere tra i nostri primi
+              speaker, puoi utilizzare i link qui sotto!
+      </div>
+        <div class="modal-footer">
+            <a href="https://mail.python.org/mm3/mailman3/lists/pyre.python.org/" target="_blank"><button class='btn btn-conf-2 btn-success'><i class="fa fa-envelope fa-2x" aria-hidden="true"></i> Mailing List</button></a>
+            <a href="/callforpapers"><button class='btn btn-conf-2 btn-primary'><i class="fa fa-pencil fa-2x" aria-hidden="true"></i> Call for Papers</button></a>
+          </div>
+    </div>
+  </div>
+</div>

@@ -18,6 +18,20 @@ toastr.options = {
 };
 toastr.info('Questo sito NON utilizza Cookie di nessun tipo. Volevamo fartelo sapere  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>');
 
+
+// NAVBAR
+$(document).ready(function() {
+        $(window).scroll(function() {
+          // checks if window is scrolled more than 500px, adds/removes solid class
+          if($(this).scrollTop()) {
+              $('.navbar').addClass('solid');
+          } else {
+              $('.navbar').removeClass('solid');
+          }
+        });
+});
+
+
 // Link al repo github
 $(window).scroll(function() {
 	if ($(window).scrollTop() >= (($(document).height() - $(window).height()) - $('.call-to-action').innerHeight()) && location.pathname == '/') {
