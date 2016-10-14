@@ -48,7 +48,10 @@ body {
 	clear: both;
 }
 .centered {text-align: center}
-.mt {margin-top: 50px;}
+.mt {
+	margin-top: 50px;
+	color: black;
+}
 .mb {margin-bottom: 50px;}
 .mtb {margin-top: 50px; margin-bottom: 50px;}
 .mtb2 { margin-top: 100px; margin-bottom: 100px;}
@@ -229,14 +232,14 @@ input {
 
 /* SEP */
 #sep {
-	background: url(../img/sep.jpg) no-repeat center top;
+	background: url(../img/main/email-banner.png) no-repeat center top;
 	padding-top: 90px;
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
-	min-height: 450px;
+	min-height: 600px;
 	width: 100%;
-	color: white;
+	color: black;
 
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
@@ -272,6 +275,32 @@ input {
     background-size: cover;
 }
 
+#contatti {
+	background-image: url(../img/main/contatti.jpg);
+	padding-top: 150px;
+	padding-bottom: 150px;
+	min-height: 600px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center top;
+	width: 100%;
+	color: black;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#map {
+	height: 400px;
+}
+
 .transparent {
     background:rgba(255,255,255,0.5);
 }
@@ -280,6 +309,10 @@ input {
 	letter-spacing: 1px;
 	line-height: 30px;
 	margin-top: 30px;
+}
+
+#sep p {
+	color: white;
 }
 
 /* Pricing Tables */

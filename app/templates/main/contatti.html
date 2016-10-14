@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PYRE - Python Reggio Emilia User Group</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/ionicons.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <!-- Toastr -->
+    <link href="/static/css/toastr.min.css" rel="stylesheet">
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  <!--Menu-->
+  {% include "main/menu.html" %}
+    <div id="contatti">
+      <div class="container transparent">
+        <div class="row centered">
+          <div class="col-md-8 col-md-offset-2">
+            <h1><b>DIVENTA UNO DI NOI!</b></h1>
+            <h2>
+                Lavori con Python?<br>
+                Stai imparando? Vuoi imparare?<br>
+                Vieni a trovarci!
+            </h2>
+          </div><!--/col-md-8-->
+        </div>
+      </div>
+    </div><!--/banner-->
+
+     <div class="container ptb">
+        <div class="row">
+            <div class="col-md-6">
+              <h2>Siamo a <b>Reggio Emilia</b>, <br>nel <i class="fa fa-heart" aria-hidden="true"></i> della Food Valley</h2>
+              <p class="mt">
+                  Nato per essere un <b>punto d'incontro</b> per gli sviluppatori Python reggiani, il PyRE
+                 è un gruppo di persone con in comune la passione per questo linguaggio di programmazione. Cerchiamo
+                  di organizzare meeting periodici per <b>imparare</b> nuove tecniche, illustrare casi d'uso, <b>divertirci</b>
+                  con dei workshop e gare di programmazione.
+              </p>
+                <hr>
+                <p>Che tu sia un professionista, uno studente, uno smanettone, o un semplice curioso: <b>SEI IL BENVENUTO!</b></p>
+                <!-- TODO: Aggiungere l'indirizzo della nuova sede -->
+            </div>
+            <div class="col-md-6" id="map"></div>
+      </div><!--/row-->
+    </div><!--/container-->
+
+    <div id="sep">
+      <div class="container">
+        <div class="row centered">
+          <div class="col-md-8 col-md-offset-2 transparent">
+              <div class="row" style="padding: 40px;">
+                  <img src="/static/img/main/tek1.png" style="max-width: 200px">
+                <h1>La Mailing List. Thanks to <b>Python.org</b></h1>
+                <h3>Per discutere le nostre attività e i prossimi eventi utilizziamo una mailing list, ospitata direttamente sui server della Python Software Foundation.</h3>
+                  <h4><b>Se vuoi restare aggiornato su tutto quello che ruota intorno al PyRE</b></h4>
+                <a href="https://mail.python.org/mm3/mailman3/lists/pyre.python.org/" target="_blank"><button class='btn btn-conf-2 btn-orange'><i class="fa fa-envelope fa-2x" aria-hidden="true"></i> Iscriviti</button></a>
+              </div>
+            </div><!--/col-md-8-->
+        </div>
+      </div>
+    </div><!--/sep-->
+
+
+
+    <div class="container ptb">
+      <div class="row">
+        <div class="col-md-12 centered">
+
+        <h2>... oppure semplicemente <b>Scrivici</b></h2>
+
+        {% include "forms/contatti.html" %}
+            </div>
+      </div><!--/row-->
+    </div><!--/container-->
+
+    <!--Footer-->
+    {% include "main/footer.html" %}
+    <!--/.Footer-->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/retina-1.1.0.js"></script>
+    <!--Toastr-->
+    <script type="text/javascript" src="/static/js/toastr.min.js"></script>
+    <script type="text/javascript" src="/static/js/main/common.js" defer></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" >
+        (function() {
+                "use strict";
+                google.maps.event.addDomListener(window, 'load', init);
+
+                function init() {
+                    var mapOptions = {
+                        zoom: 13,
+                        center: new google.maps.LatLng(44.708123, 10.606256),
+
+                        // How you would like to style the map.
+                        // Stile copia-incollato da Snazzy Maps.
+                        styles: [{"elementType":"geometry","stylers":[{"hue":"#ff4400"},{"saturation":-68},{"lightness":-4},{"gamma":0.72}]},{"featureType":"road","elementType":"labels.icon"},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"hue":"#0077ff"},{"gamma":3.1}]},{"featureType":"water","stylers":[{"hue":"#00ccff"},{"gamma":0.44},{"saturation":-33}]},{"featureType":"poi.park","stylers":[{"hue":"#44ff00"},{"saturation":-23}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"hue":"#007fff"},{"gamma":0.77},{"saturation":65},{"lightness":99}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"gamma":0.11},{"weight":5.6},{"saturation":99},{"hue":"#0091ff"},{"lightness":-86}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"lightness":-48},{"hue":"#ff5e00"},{"gamma":1.2},{"saturation":-23}]},{"featureType":"transit","elementType":"labels.text.stroke","stylers":[{"saturation":-64},{"hue":"#ff9100"},{"lightness":16},{"gamma":0.47},{"weight":2.7}]}]
+                    };
+                    var mapElement = document.getElementById('map');
+
+                    var map = new google.maps.Map(mapElement, mapOptions);
+
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(44.708123, 10.606256),
+                        map: map,
+                        title: 'Siamo qui!'
+                    });
+                }
+        })();
+        </script>
+  </body>
+</html>

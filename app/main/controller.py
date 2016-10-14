@@ -11,3 +11,8 @@ def index():
 @main.route('/callforpapers', methods=['GET', 'POST'])
 def callforpapers():
     return render_template('main/callforpapers.html')
+
+
+@main.route('/contatti', methods=['GET', 'POST'])
+def contatti():
+    return render_template('main/contatti.html')
