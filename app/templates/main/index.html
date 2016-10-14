@@ -14,6 +14,7 @@
 
     <!-- Custom styles for this template -->
     <link href="/static/css/ionicons.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
     <link href="/static/css/style.css" rel="stylesheet">
     <!-- Toastr -->
     <link href="/static/css/toastr.min.css" rel="stylesheet">
@@ -37,8 +38,8 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 centered">
             <h1>PYRE.it</h1>
-            <h2>Il primo Python User Group della Food Valley</h2>
-            <a href="#"><button class='btn btn-conf-2 btn-orange'>Iscriviti alla Mailing List</button></a>
+            <h2>Il primo <b>Python User Group</b><br>della Food Valley</h2>
+            <a href="#"><button class='btn btn-conf-2 btn-orange'><i class="fa fa-envelope fa-2x" aria-hidden="true"></i> Iscriviti alla Mailing List</button></a>
           </div>
         </div><!--/row-->
       </div><!--/container-->
@@ -143,28 +144,6 @@
       </div><!--/row-->
     </div><!--/container-->
 
-    <div id="g">
-      <div class="container">
-        <div class="row sponsor centered">
-          <div class="col-sm-2 col-sm-offset-1">
-            <img src="/static/img/tek1.png" alt="">
-          </div>
-          <div class="col-sm-2">
-            <img src="/static/img/tek2.png" alt="">
-          </div>
-          <div class="col-sm-2">
-            <img src="/static/img/tek3.png" alt="">
-          </div>
-          <div class="col-sm-2">
-            <img src="/static/img/tek4.png" alt="">
-          </div>
-          <div class="col-sm-2">
-            <img src="/static/img/tek5.png" alt="">
-          </div>
-        </div><!--/row-->
-      </div>
-    </div><!--/g-->
-
     <div id="orange">
       <div class="container">
         <div class="row">
@@ -192,6 +171,29 @@
       </div><!--/container-->
     </div><!--/orange-->
 
+    <div id="g">
+      <div class="container">
+        <div class="row sponsor centered">
+            <h3>Built with <i class="fa fa-heart" aria-hidden="true"></i> using:</h3>
+          <div class="col-md-2 col-md-offset-1">
+            <img src="/static/img/tek1.png" alt="">
+          </div>
+          <div class="col-md-2">
+            <img src="/static/img/tek2.png" alt="">
+          </div>
+          <div class="col-md-2">
+            <img src="/static/img/tek3.png" alt="">
+          </div>
+          <div class="col-md-2">
+            <img src="/static/img/tek5.png" alt="">
+          </div>
+          <div class="col-md-2">
+            <img src="/static/img/tek4.png" alt="">
+          </div>
+        </div><!--/row-->
+      </div>
+    </div><!--/g-->
+
     <!--Footer-->
     {% include "main/footer.html" %}
     <!--/.Footer-->
@@ -205,6 +207,6 @@
     <!--Toastr-->
     <script type="text/javascript" src="/static/js/toastr.min.js"></script>
     <!-- index js (buttons, etc.) -->
-    <script type="text/javascript" src="/static/js/main/index.js"></script>
+    <script type="text/javascript" src="/static/js/main/index.js" defer></script>
   </body>
 </html>

@@ -28,7 +28,7 @@
 		<div class="col-xs-6 col-sm-6 col-md-6">
 			<div class="form-group">
 				<select id="tipo-talk" class="form-control input-lg">
-				    <option hidden>-- Seleziona il tipo di intervento --</option>
+				    <option hidden>-- Tipo Intervento --</option>
 				    <option value="talk">Talk</option>
 				    <option value="tutorial">Tutorial</option>
 				    <option value="workshop">Workshop</option>
@@ -42,8 +42,10 @@
 		</div>
 	</div>
 	<div class="form-group">
-			<p>Allega un file</p>
-			<input type="file" name="file" id="file" class="form-control">
+		<p>Allega un file</p>
+		<label class="btn btn-primary">
+			Browse&hellip; <input type="file" style="display: none;">
+		</label>
 	</div>
 
 	<hr>

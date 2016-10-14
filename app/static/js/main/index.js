@@ -1,4 +1,24 @@
-// Link al repo github (solo homepage)
+// COOKIE LAW
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-bottom-full-width",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+};
+toastr.info('Questo sito NON utilizza Cookie di nessun tipo. Volevamo fartelo sapere  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>');
+
+// Link al repo github
 $(window).scroll(function() {
 	if ($(window).scrollTop() >= (($(document).height() - $(window).height()) - $('.call-to-action').innerHeight()) && location.pathname == '/') {
 		toastr.options = {
