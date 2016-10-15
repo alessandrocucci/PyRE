@@ -1,19 +1,19 @@
-from wtforms import Form, validators, StringField, SelectField, TextAreaField
+from wtforms import validators, StringField, SelectField, TextAreaField
+from flask_wtf import FlaskForm
 import requests
-from config import CAPTCHA_KEY_SECRET
+from config import CAPTCHA_KEY_SECRET, CSRF_SESSION_KEY
 
 
 def handle_captcha_requests(response_from_form):
-    url = 'https://www.google.com/recaptcha/api/siteverify'
-    to_send = {
-        'secret': CAPTCHA_KEY_SECRET,
-        'response': response_from_form
-    }
-    res = requests.post(url, json=to_send).json()
+    url = 'https://www.google.com/recaptcha/api/siteverify?secret={0};response={1}'.format(
+        CAPTCHA_KEY_SECRET, response_from_form
+    )
+    res = requests.post(url).json()
     return res['success']
 
 
-class CallForPapers(Form):
+class CallForPapers(FlaskForm):
+    SECRET_KEY = CSRF_SESSION_KEY
     nome = StringField(
         'nome',
         [validators.DataRequired()],
@@ -68,12 +68,13 @@ class CallForPapers(Form):
     )
 
 
-class ContactForm(Form):
+class ContactForm(FlaskForm):
     """
     Classe form per invio mail dalla pagina dei contatti.
 
     Il submit e il reCAPTCHA li inserisco secchi nel template.
     """
+    SECRET_KEY = CSRF_SESSION_KEY
     nome = StringField(
         'nome',
         [validators.DataRequired()],

@@ -15,7 +15,7 @@ def index():
 @main.route('/callforpapers', methods=['GET', 'POST'])
 def callforpapers():
     form = CallForPapers()
-    if request.method == 'POST' and form.validate() and handle_captcha_requests(request.form['g-recaptcha-response']):
+    if request.method == 'POST' and form.validate_on_submit() and handle_captcha_requests(request.form['g-recaptcha-response']):
         if request.files['file']:
             f = request.files['file']
             f.save(secure_filename(f.filename))
@@ -46,7 +46,7 @@ def callforpapers():
 @main.route('/contatti', methods=['GET', 'POST'])
 def contatti():
     form = ContactForm()
-    if request.method == 'POST' and form.validate() and handle_captcha_requests(request.form['g-recaptcha-response']):
+    if request.method == 'POST' and form.validate_on_submit() and handle_captcha_requests(request.form['g-recaptcha-response']):
         mail = ContactMail(text=form.messaggio.data, _from=" ".join((form.nome.data, form.cognome.data, form.email.data)))
         mail.send_mail()
     return render_template('main/contatti.html', form=form, key=CAPTCHA_KEY, maps_key=MAPS_API_KEY)

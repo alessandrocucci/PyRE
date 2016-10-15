@@ -8,6 +8,7 @@ class PyREMail(object):
         self.message.text = text
         self._from = _from
         self.attachements = attachments
+        self.message.sender = 'info@pyre.it'
         if not recipients:
             self.recipients = ['info@pyre.it']
 

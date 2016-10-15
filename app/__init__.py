@@ -9,7 +9,7 @@ mail = Mail(app)
 
 # Configurazioni
 app.config.from_object('config')
-
+app.secret_key = app.config['CSRF_SESSION_KEY']
 
 # HTTP error handling
 @app.errorhandler(404)
