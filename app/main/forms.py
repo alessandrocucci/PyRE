@@ -14,14 +14,58 @@ def handle_captcha_requests(response_from_form):
 
 
 class CallForPapers(Form):
-    nome = StringField('nome')
-    cognome = StringField('cognome')
-    email = StringField('email', [validators.DataRequired(), validators.Email("Inserisci una mail valida")])
+    nome = StringField(
+        'nome',
+        [validators.DataRequired()],
+        render_kw={
+            "placeholder": "Nome",
+            "class_": "form-control input-lg"
+        })
+    cognome = StringField(
+        'cognome',
+        [validators.DataRequired()],
+        render_kw={
+            "placeholder": "Cognome",
+            "class_": "form-control input-lg"
+        })
+    email = StringField(
+        'email',
+        [validators.DataRequired(), validators.Email("Inserisci una mail valida")],
+        render_kw={
+            "placeholder": "Email",
+            "class_": "form-control input-lg"
+        })
+    argomento = StringField(
+        'argomento',
+        [validators.DataRequired()],
+        render_kw={
+            "placeholder": "Titolo",
+            "class_": "form-control input-lg"
+        })
+    abstract = TextAreaField(
+        'abstract',
+        [validators.DataRequired()],
+        render_kw={
+            "placeholder": "Riassunto",
+            "class_": "form-control input-lg",
+            "rows": 5
+        })
     type_of_talk = SelectField(
         'Tipologia',
-        choices=[('talk', 'Talk'), ('tutorial', 'Tutorial'), ('workshop', 'Workshop')]
+        choices=[('', '-- Tipo Intervento --'), ('talk', 'Talk'), ('tutorial', 'Tutorial'), ('workshop', 'Workshop')],
+        render_kw={
+            "class_": "form-control input-lg",
+            "rows": 5
+        }
     )
-    durata = StringField("Durata Prevista")
+    durata = StringField(
+        "Durata Prevista",
+        render_kw={
+            "placeholder": "Durata",
+            "class_": "form-control input-lg",
+            "rows": 5
+        }
+    )
 
 
 class ContactForm(Form):

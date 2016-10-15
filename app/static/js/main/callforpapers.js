@@ -3,12 +3,12 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-var contact_form = document.forms["contact-form"];
-$(document).on('submit', contact_form, function(e) {
-    var fields = ["nome", "cognome", "email", "messaggio"];
+var call_form = document.forms["callforpapers-form"];
+$(document).on('submit', call_form, function(e) {
+    var fields = ["nome", "cognome", "email", "argomento", "tipologia"];
     fields.forEach(function(field) {
-        var parent = contact_form[field].parentNode;
-        if (!contact_form[field].value || ((field == 'email') && !validateEmail(contact_form[field].value))){
+        var parent = call_form[field].parentNode;
+        if (!call_form[field].value || ((field == 'email') && !validateEmail(call_form[field].value))){
                 parent.classList.remove("has-error");
                 parent.classList.add("has-error");
             e.preventDefault();

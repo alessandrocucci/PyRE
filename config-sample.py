@@ -21,3 +21,14 @@ CSRF_SESSION_KEY = "secret"
 MAPS_API_KEY = 'qui ci va la chiave per google maps'
 CAPTCHA_KEY = 'qui ci va la chiave dei recaptcha'
 CAPTCHA_KEY_SECRET = 'qui ci va la chiave dei recaptcha'
+
+# UPLOAD
+UPLOAD_FOLDER = 'app/upload'
+
+# Mail
+MAIL_SERVER = 'host'
+MAIL_USE_TLS = True
+MAIL_USE_SSL = False
+MAIL_PORT = 25
+MAIL_USERNAME = 'username'
+MAIL_PASSWORD = 'password'
