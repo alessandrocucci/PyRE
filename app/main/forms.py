@@ -1,4 +1,16 @@
-from wtforms import Form, validators, StringField, SelectField, TextAreaField, SubmitField
+from wtforms import Form, validators, StringField, SelectField, TextAreaField
+import requests
+from config import CAPTCHA_KEY_SECRET
+
+
+def handle_captcha_requests(response_from_form):
+    url = 'https://www.google.com/recaptcha/api/siteverify'
+    to_send = {
+        'secret': CAPTCHA_KEY_SECRET,
+        'response': response_from_form
+    }
+    res = requests.post(url, json=to_send).json()
+    return res['success']
 
 
 class CallForPapers(Form):

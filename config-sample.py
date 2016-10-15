@@ -20,3 +20,4 @@ CSRF_SESSION_KEY = "secret"
 
 MAPS_API_KEY = 'qui ci va la chiave per google maps'
 CAPTCHA_KEY = 'qui ci va la chiave dei recaptcha'
+CAPTCHA_KEY_SECRET = 'qui ci va la chiave dei recaptcha'
