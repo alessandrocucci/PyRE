@@ -6,11 +6,10 @@ class PyREMail(object):
     def __init__(self, recipients=(), text="", _from="", attachments=()):
         self.message = Message()
         self.message.text = text
+        self.message.recipients = recipients or ['info@pyre.it']
         self._from = _from
         self.attachements = attachments
         self.message.sender = 'info@pyre.it'
-        if not recipients:
-            self.recipients = ['info@pyre.it']
 
     def send_mail(self):
         if self.attachements:
