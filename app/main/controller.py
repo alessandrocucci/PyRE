@@ -1,4 +1,5 @@
 from flask import render_template, Blueprint, redirect, request, url_for, flash
+from forms import ContactForm
 
 main = Blueprint('main', __name__)
 
@@ -15,4 +16,6 @@ def callforpapers():
 
 @main.route('/contatti', methods=['GET', 'POST'])
 def contatti():
-    return render_template('main/contatti.html')
+    from config import CAPTCHA_KEY
+    form = ContactForm()
+    return render_template('main/contatti.html', form=form, key=CAPTCHA_KEY)
