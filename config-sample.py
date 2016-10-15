@@ -18,5 +18,5 @@ CSRF_ENABLED = True
 # Secret key for signing the data.
 CSRF_SESSION_KEY = "secret"
 
-MAPS_API_KEY = ''
-CAPTCHA_KEY = ''
+MAPS_API_KEY = 'qui ci va la chiave per google maps'
+CAPTCHA_KEY = 'qui ci va la chiave dei recaptcha'
