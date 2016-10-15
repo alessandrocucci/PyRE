@@ -16,9 +16,6 @@ def index():
 def callforpapers():
     form = CallForPapers()
     if request.method == 'POST' and form.validate_on_submit() and handle_captcha_requests(request.form['g-recaptcha-response']):
-        if request.files['file']:
-            f = request.files['file']
-            f.save(secure_filename(f.filename))
         messaggio = """
         Nome: {nome}
         Cognome: {cognome}
@@ -30,15 +27,15 @@ def callforpapers():
         Abstract:
         {riassunto}
         """.format(
-            nome=form.nome.data,
-            cognome=form.cognome.data,
-            email=form.email.data,
-            titolo=form.argomento.data,
-            tipo=form.type_of_talk.data,
-            durata=form.durata.data,
-            riassunto=form.abstract.data
+            nome=form.nome.data.encode('utf-8'),
+            cognome=form.cognome.data.encode('utf-8'),
+            email=form.email.data.encode('utf-8'),
+            titolo=form.argomento.data.encode('utf-8'),
+            tipo=form.type_of_talk.data.encode('utf-8'),
+            durata=form.durata.data.encode('utf-8'),
+            riassunto=form.abstract.data.encode('utf-8')
         )
-        mail = CallforPapersMail(text=messaggio, _from=" ".join((form.nome.data, form.cognome.data)), attachments=[request.files['file']])
+        mail = CallforPapersMail(text=messaggio, _from=" ".join((form.nome.data, form.cognome.data)))
         mail.send_mail()
     return render_template('main/callforpapers.html', form=form, key=CAPTCHA_KEY)
 
@@ -47,6 +44,6 @@ def callforpapers():
 def contatti():
     form = ContactForm()
     if request.method == 'POST' and form.validate_on_submit() and handle_captcha_requests(request.form['g-recaptcha-response']):
-        mail = ContactMail(text=form.messaggio.data, _from=" ".join((form.nome.data, form.cognome.data, form.email.data)))
+        mail = ContactMail(text=form.messaggio.data.encode('utf-8'), _from=" ".join((form.nome.data, form.cognome.data, form.email.data)))
         mail.send_mail()
     return render_template('main/contatti.html', form=form, key=CAPTCHA_KEY, maps_key=MAPS_API_KEY)
