@@ -3,7 +3,7 @@ from werkzeug.utils import secure_filename
 
 from forms import ContactForm, CallForPapers, handle_captcha_requests
 from model import ContactMail, CallforPapersMail
-from config import CAPTCHA_KEY
+from config import CAPTCHA_KEY, MAPS_API_KEY
 
 main = Blueprint('main', __name__)
 
@@ -49,4 +49,4 @@ def contatti():
     if request.method == 'POST' and form.validate() and handle_captcha_requests(request.form['g-recaptcha-response']):
         mail = ContactMail(text=form.messaggio.data, _from=" ".join((form.nome.data, form.cognome.data, form.email.data)))
         mail.send_mail()
-    return render_template('main/contatti.html', form=form, key=CAPTCHA_KEY)
+    return render_template('main/contatti.html', form=form, key=CAPTCHA_KEY, maps_key=MAPS_API_KEY)
