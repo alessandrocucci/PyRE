@@ -5,10 +5,12 @@ from config import CAPTCHA_KEY_SECRET, CSRF_SESSION_KEY
 
 
 def handle_captcha_requests(response_from_form):
-    url = 'https://www.google.com/recaptcha/api/siteverify?secret={0};response={1}'.format(
-        CAPTCHA_KEY_SECRET, response_from_form
-    )
-    res = requests.post(url).json()
+    url = 'https://www.google.com/recaptcha/api/siteverify'
+    data_dict = {
+        'secret': CAPTCHA_KEY_SECRET,
+        'response': response_from_form
+    }
+    res = requests.post(url, data=data_dict).json()
     return res['success']
 
 
