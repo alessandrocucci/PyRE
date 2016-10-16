@@ -33,8 +33,9 @@ $(document).on('submit', contact_form, function(e) {
         success: function(response) {
             response = JSON.parse(response);
             if (response['status'] == 'OK') {
+                $(".help-inline").remove();
+                $('form[name="contact-form"]')[0].reset();
                 toastr.success(response['message']);
-                $('form[name="contact-form"]').reset();
             }
             else if (response['message'] && response['message'] instanceof Object){
                 // Errori nella validazione del form...
