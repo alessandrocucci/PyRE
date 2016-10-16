@@ -34,6 +34,7 @@ $(document).on('submit', call_form, function(e) {
             response = JSON.parse(response);
             if (response['status'] == 'OK') {
                 toastr.success(response['message']);
+                $('form[name="callforpapers-form"]').reset();
             }
             else if (response['message'] && response['message'] instanceof Object){
                 // Errori nella validazione del form...
