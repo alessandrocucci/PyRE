@@ -14,39 +14,44 @@ def handle_captcha_requests(response_from_form):
     return res['success']
 
 
+class DataRequired(validators.DataRequired):
+    def __init__(self):
+        super(DataRequired, self).__init__(message="Questo campo e' obbligatorio")
+
+
 class CallForPapers(FlaskForm):
     SECRET_KEY = CSRF_SESSION_KEY
     nome = StringField(
         'nome',
-        [validators.DataRequired()],
+        [DataRequired()],
         render_kw={
             "placeholder": "Nome",
             "class_": "form-control input-lg"
         })
     cognome = StringField(
         'cognome',
-        [validators.DataRequired()],
+        [DataRequired()],
         render_kw={
             "placeholder": "Cognome",
             "class_": "form-control input-lg"
         })
     email = StringField(
         'email',
-        [validators.DataRequired(), validators.Email("Inserisci una mail valida")],
+        [DataRequired(), validators.Email("Inserisci una mail valida")],
         render_kw={
             "placeholder": "Email",
             "class_": "form-control input-lg"
         })
     argomento = StringField(
         'argomento',
-        [validators.DataRequired()],
+        [DataRequired()],
         render_kw={
             "placeholder": "Titolo",
             "class_": "form-control input-lg"
         })
     abstract = TextAreaField(
         'abstract',
-        [validators.DataRequired()],
+        [DataRequired()],
         render_kw={
             "placeholder": "Riassunto",
             "class_": "form-control input-lg",
@@ -79,28 +84,28 @@ class ContactForm(FlaskForm):
     SECRET_KEY = CSRF_SESSION_KEY
     nome = StringField(
         'nome',
-        [validators.DataRequired()],
+        [DataRequired()],
         render_kw={
             "placeholder": "Nome",
             "class_": "form-control input-lg"
         })
     cognome = StringField(
         'cognome',
-        [validators.DataRequired()],
+        [DataRequired()],
         render_kw={
             "placeholder": "Cognome",
             "class_": "form-control input-lg"
         })
     email = StringField(
         'email',
-        [validators.DataRequired(), validators.Email("Inserisci una mail valida")],
+        [DataRequired(), validators.Email("Inserisci una mail valida")],
         render_kw={
             "placeholder": "Email",
             "class_": "form-control input-lg"
         })
     messaggio = TextAreaField(
         'messaggio',
-        [validators.DataRequired()],
+        [DataRequired()],
         render_kw={
             "placeholder": "Messaggio",
             "class_": "form-control input-lg",

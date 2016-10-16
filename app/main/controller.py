@@ -1,5 +1,5 @@
 from flask import render_template, Blueprint, request
-from werkzeug.utils import secure_filename
+import json
 
 from forms import ContactForm, CallForPapers, handle_captcha_requests
 from model import ContactMail, CallforPapersMail
@@ -12,10 +12,18 @@ def index():
     return render_template('main/index.html')
 
 
-@main.route('/callforpapers', methods=['GET', 'POST'])
+@main.route('/callforpapers', methods=['GET'])
 def callforpapers():
     form = CallForPapers()
-    if request.method == 'POST' and form.validate_on_submit() and handle_captcha_requests(request.form['g-recaptcha-response']):
+    return render_template('main/callforpapers.html', form=form, key=CAPTCHA_KEY)
+
+
+@main.route('/send_call_mail', methods=['POST'])
+def send_call_mail():
+    form = CallForPapers()
+    if form.errors:
+        return json.dumps({'status': 'KO', 'message': form.errors})
+    elif form.validate_on_submit() and handle_captcha_requests(request.form['g-recaptcha-response']):
         messaggio = """
         Nome: {nome}
         Cognome: {cognome}
@@ -36,14 +44,35 @@ def callforpapers():
             riassunto=form.abstract.data.encode('utf-8')
         )
         mail = CallforPapersMail(text=messaggio, _from=" ".join((form.nome.data, form.cognome.data)))
-        mail.send_mail()
-    return render_template('main/callforpapers.html', form=form, key=CAPTCHA_KEY)
+        try:
+            mail.send_mail()
+        except Exception:
+            return json.dumps({'status': 'KO', 'message': "ERRORE: impossibile inviare la mail"})
+        else:
+            return json.dumps({'status': 'OK', 'message': "Messaggio inviato correttamente"})
+    return json.dumps({})
 
 
-@main.route('/contatti', methods=['GET', 'POST'])
+@main.route('/contatti', methods=['GET'])
 def contatti():
     form = ContactForm()
-    if request.method == 'POST' and form.validate_on_submit() and handle_captcha_requests(request.form['g-recaptcha-response']):
-        mail = ContactMail(text=form.messaggio.data.encode('utf-8'), _from=" ".join((form.nome.data, form.cognome.data, form.email.data)))
-        mail.send_mail()
     return render_template('main/contatti.html', form=form, key=CAPTCHA_KEY, maps_key=MAPS_API_KEY)
+
+
+@main.route('/send_contact_mail', methods=['POST'])
+def send_contact_mail():
+    form = ContactForm()
+    validated = form.validate_on_submit()
+    if form.errors:
+        return json.dumps({'status': 'KO', 'message': form.errors})
+    elif validated and handle_captcha_requests(request.form['g-recaptcha-response']):
+        mail = ContactMail(text=form.messaggio.data.encode('utf-8'), _from=" ".join((form.nome.data, form.cognome.data, form.email.data)))
+        try:
+            mail.send_mail()
+        except Exception:
+            return json.dumps({'status': 'KO', 'message': "ERRORE: impossibile inviare la mail"})
+        else:
+            return json.dumps({'status': 'OK', 'message': "Messaggio inviato correttamente"})
+    return json.dumps({})
+
+
