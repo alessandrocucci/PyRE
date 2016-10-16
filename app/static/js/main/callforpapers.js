@@ -6,7 +6,7 @@ function validateEmail(email) {
 var call_form = document.forms["callforpapers-form"];
 $(document).on('submit', call_form, function(e) {
     e.preventDefault();
-    var fields = ["nome", "cognome", "email", "argomento", "tipologia"];
+    var fields = ["nome", "cognome", "email", "argomento", "type_of_talk", "abstract"];
     fields.forEach(function(field) {
         var parent = call_form[field].parentNode;
         if (!call_form[field].value || ((field == 'email') && !validateEmail(call_form[field].value))){

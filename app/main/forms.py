@@ -61,8 +61,7 @@ class CallForPapers(FlaskForm):
         'Tipologia',
         choices=[('', '-- Tipo Intervento --'), ('talk', 'Talk'), ('tutorial', 'Tutorial'), ('workshop', 'Workshop')],
         render_kw={
-            "class_": "form-control input-lg",
-            "rows": 5
+            "class_": "form-control input-lg"
         }
     )
     durata = StringField(
