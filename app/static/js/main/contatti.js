@@ -34,7 +34,7 @@ $(document).on('submit', contact_form, function(e) {
             response = JSON.parse(response);
             if (response['status'] == 'OK') {
                 $(".help-inline").remove();
-                $('form[name="contact-form"]')[0].reset();
+                $('form[name="callforpapers-form"]')[0].reset();
                 toastr.success(response['message']);
             }
             else if (response['message'] && response['message'] instanceof Object){
