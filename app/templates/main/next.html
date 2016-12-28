@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="python, usergroup, reggioemilia, reggio, programming, development, dev, coding">
+    <meta name="description" content="Il sito ufficiale del Python Reggio Emilia User Group">
+
+    <title>Prossimo Incontro - Python Reggio Emilia User Group</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/ionicons.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <!-- Toastr -->
+    <link href="/static/css/toastr.min.css" rel="stylesheet">
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  <!--Menu-->
+  {% include "main/menu.html" %}
+    <div id="next">
+      <div class="container transparent">
+        <div class="row centered">
+          <div class="col-md-8 col-md-offset-2">
+		  <h1><b>REST API, prototipazione rapida<br />con Flask e SqlAlchemy</b></h1>
+            <h2>Mercoledí 11 Gennaio 2017 h19:00</h2>
+	    <h3>Impact HUB Reggio Emilia</h3>
+          </div><!--/col-md-8-->
+        </div>
+      </div>
+    </div><!--/sep-->
+    <div class="container ptb">
+      <div class="row">
+        <div class="col-md-12 centered">
+
+        <h2><b>Sommario</b></h2>
+	<h4>Per il primo incontro del PyRE si é scelto un argomento che negli ultimi anni ha avuto ampia diffusione in campo IT: i web service di tipo <b>REST</b>.
+	    Nel corso della serata verrá illustrato un esempio pratico di come iniziare lo sviluppo di un'applicazione REST lato server, utilizzando strumenti 
+	    ormai noti nel panorama Python: <b>Flask</b>, un microframework che permette la realizzazione in poche righe di codice di un'app server side, e <b>SqlAlchemy</b>,
+	    un ORM che useremo per l'accesso e la manipolazione dei dati usando un linguaggio pythonico, senza la preoccupazione di dover fare delle query custom.</h4>
+      <hr>
+	    <h2><b>Livello</b></h2><h4>Basso/Intermedio</h4>
+      <hr>
+	<h2><b>Speaker</b></h2>
+	    <h4><b>Alessandro Cucci</b>, 31 anni, lavora attualmente come Python Developer presso Energee3 srl, azienda di consulenza informatica con sedi a Reggio Emilia, Milano, Torino e Roma.
+		    In Energee é Responsabile di Competenza per il linguaggio Python, si occupa della formazione ai nuovi tirocinanti/tesisti/neo-assunti, offre supporto tecnico ai developer Python, gestisce la revisione del codice Python aziendale.<br />
+		    In ambito community, é attivo come Contributor per la Python Software Foundation, nel 2016 ha rilasciato due patch per la release 3.6 di Python. <br />Tra i suoi interessi, l'utilizzo di Python nel campo dell'IoT, Machine Learning e Big Data.</h4>
+        <hr> 
+	    <h2><b>Location</b></h2> 
+      <h4><b>IMPACT HUB<br />
+      Via Statuto 3<br />
+      Reggio Emilia</b></h4>
+      <div class="col-md-12" id="map"></div>
+            </div>
+      </div><!--/row-->
+    </div><!--/container-->
+
+
+    <!--Footer-->
+    {% include "main/footer.html" %}
+    <!--/.Footer-->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/retina-1.1.0.js"></script>
+    <!--Toastr-->
+    <script type="text/javascript" src="/static/js/toastr.min.js"></script>
+    <script type="text/javascript" src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&key={{ maps_key }}"></script>
+    <script type="text/javascript" src="/static/js/main/common.js" defer></script>
+    <script type="text/javascript" >
+        (function() {
+                "use strict";
+                google.maps.event.addDomListener(window, 'load', init);
+
+                function init() {
+                    var mapOptions = {
+                        zoom: 13,
+                        center: new google.maps.LatLng(44.6925221, 10.6313944),
+
+                        // How you would like to style the map.
+                        // Stile copia-incollato da Snazzy Maps.
+                        styles: [{"elementType":"geometry","stylers":[{"hue":"#ff4400"},{"saturation":-68},{"lightness":-4},{"gamma":0.72}]},{"featureType":"road","elementType":"labels.icon"},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"hue":"#0077ff"},{"gamma":3.1}]},{"featureType":"water","stylers":[{"hue":"#00ccff"},{"gamma":0.44},{"saturation":-33}]},{"featureType":"poi.park","stylers":[{"hue":"#44ff00"},{"saturation":-23}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"hue":"#007fff"},{"gamma":0.77},{"saturation":65},{"lightness":99}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"gamma":0.11},{"weight":5.6},{"saturation":99},{"hue":"#0091ff"},{"lightness":-86}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"lightness":-48},{"hue":"#ff5e00"},{"gamma":1.2},{"saturation":-23}]},{"featureType":"transit","elementType":"labels.text.stroke","stylers":[{"saturation":-64},{"hue":"#ff9100"},{"lightness":16},{"gamma":0.47},{"weight":2.7}]}]
+                    };
+                    var mapElement = document.getElementById('map');
+
+                    var map = new google.maps.Map(mapElement, mapOptions);
+
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(44.6925221, 10.6313944),
+                        map: map,
+                        title: 'Siamo qui!'
+                    });
+                }
+        })();
+        </script>
+  </body>
+</html>

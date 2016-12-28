@@ -12,6 +12,11 @@ def index():
     return render_template('main/index.html')
 
 
+@main.route('/next')
+def prossimo_incontro():
+    return render_template('main/next.html', maps_key=MAPS_API_KEY)
+
+
 @main.route('/callforpapers', methods=['GET'])
 def callforpapers():
     form = CallForPapers()
