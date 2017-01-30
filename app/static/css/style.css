@@ -187,6 +187,16 @@ input {
 	color: white
 }
 
+.btn-facebook {
+	background: #3b5998;
+	color: white
+}
+
+.btn-twitter {
+	background: #15a7ff;
+	color: white
+}
+
 /* HEADER SECTION */
 #h {
 	background: url(../img/main/reggio.jpg) no-repeat center top;
@@ -233,6 +243,28 @@ input {
 /* SEP */
 #sep {
 	background: url(../img/main/email-banner.png) no-repeat center top;
+	padding-top: 90px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 600px;
+	width: 100%;
+	color: black;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* SOCIAL */
+#social {
+	background: url(../img/main/social_banner.jpg) no-repeat center top;
 	padding-top: 90px;
 	text-align:center;
 	background-attachment: relative;
