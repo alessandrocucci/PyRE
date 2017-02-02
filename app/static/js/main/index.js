@@ -18,3 +18,5 @@ $(window).scroll(function() {
 		toastr.success('Scopri come abbiamo sviluppato questo sito!', 'How it is made');
 	  }
 });
+
+setTimeout(function showModal() {$('#provvisorio').modal('show');}, 2500);
