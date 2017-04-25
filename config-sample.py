@@ -6,6 +6,11 @@ import os
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Definizione del db
+MONGO_HOST = "localhost"
+MONGO_PORT = 27017
+MONGO_DBNAME = "pyre"
+MONGO_USERNAME = "user"
+MONGO_PASSWORD = "password"
 
 # Application threads. Uso due thread per processore disponibile
 # uno per gestire le request in ingresso e uno per i processi

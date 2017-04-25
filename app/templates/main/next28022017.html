@@ -37,11 +37,9 @@
       <div class="container transparent">
         <div class="row centered">
           <div class="col-md-8 col-md-offset-2">
-              <h2><b>PyRE e RELUG presentano:</b></h2>
-              <img src="/static/img/main/pandas_logo.png">
-              <h1>Quando il saggio indica il cielo, <b>Pandas</b> guarda l'indice</h1>
-            <h2>Martedí 09 Maggio 2017 h20:00</h2>
-	    <h3>Via Statuto 2 - Reggio Emilia</h3>
+		  <h1>Python Embedded con <b>MicroPython</b>: una applicazione robotica</h1>
+            <h2>Martedí 28 Febbraio 2017 h20:00</h2>
+	    <h3>Impact HUB Reggio Emilia</h3>
           </div><!--/col-md-8-->
         </div>
       </div>
@@ -51,48 +49,25 @@
         <div class="col-md-12 centered">
 
         <h2><b>Sommario</b></h2>
-	<h4>Introduzione alla libreria pandas per la gestione ed analisi di dati.
-        Il tutorial ruoterà attorno agli indici, che sono lo strumento fondamentale che rende
-        questa libreria uno strumento così pandastico per la gestione dei dati.
-        <br>
-        Anche se non si presume alcuna conoscenza della libreria stessa, sarà utile avere una
-        certa esperienza con numpy - comunque non strettamente necessaria.</h4>
+	<h4>Sempre più di frequente nel quotidiano ascoltiamo dei termini come l'"internet delle cose" (IoT) o ancora di più "robot" applicati a compiti che entrano sempre di più nel nostro quotidiano. Python, grazie al lavoro di alcune persone, è riuscita a raggiungere anche queste piattaforme ad un livello molto basso di applicazioni (embedded) riuscendo a poter essere utilizzato anche dove fino a qualche tempo fà era impossibile pensare a questo tipo di "cose".<br>
+Ad esempio utilizzare Python su una Raspberry Pi per accendere o spegnere un led o un relè è molto semplice: ma provare a farlo con un chip di pochi grammi che richiede pochissima potenza, ecco, riuscite ad immaginare una tale praticità? <br>
+Le tecnologie che andremo ad utilizzare saranno lato software: <b>MicroPython</b> (una versione realizzata ad hoc che possa essere utilizzata su dispositivi piccoli), mentre come hardware utilizzeremo <b>NodeMCU</b>: è una piccola scheda nata in origine per poter essere utilizzata con Node.js opportunamente "modificato" per girare anch'esso su hardware dedicato, e che si è dimostrato essere ottima base hardware per poterci installare dei micro firmware. Oltre al codice e alla potenza computazionale micro, utilizzeremo una base robot che provvederemo a far scorazzare in giro con l'utilizzo del solo browser del nostro smartphone, tutto tramite una semplice connessione http verso il dispositivo opportunamente programmato.</h4>
       <hr>
-            <h4><b>Requisiti</b>
-<br>
-Per seguire il tutorial dovrete avere installati:
-<ul>
-    <li>Python 3 (preferibilmente 3.5.x o successivo)</li>
-    <li>numpy versione 1.10 o successiva: <a href="http://www.numpy.org/" target="_blank">http://www.numpy.org/</a></li>
-    <li>pandas versione 0.16 o successiva: <a href="http://pandas.pydata.org" target="_blank">http://pandas.pydata.org</a></li>
-    <li>matplotlib</li>
-    <li>(già che ci siete, scipy e pytables non faranno male)</li>
-</ul>
-<br>
-    Inoltre è caldamente raccomandata (anche a prescindere da questo tutorial!) l’installazione dei notebook ipython/jupyter.
-
-    Tutto ciò si può trovare negli archivi ufficiali Debian testing o Ubuntu >= 16.04:
-     pacchetti python3-pandas, python3-numpy, python3-matplotlib e jupyter-notebook (o ipython-notebook).
-                Oppure si può installare con pip o con conda/anaconda, come indicato <a href="http://jupyter.org/install.html" target="_blank">qui</a> e <a href="http://pandas.pydata.org/" target="_blank">qui</a>.
-                </h4>
-      <hr>
-	    <h2><b>Livello</b></h2><h4>Base</h4>
+	    <h2><b>Livello</b></h2><h4>Base/Intermedio</h4>
       <hr>
 	<h2><b>Speaker</b></h2>
-	    <h4><b>Pietro Battiston</b>, Ex-quasi-matematico, poi (s)venduto al lato oscuro della forza
-(economia), oggi ricercatore (in transito).
-<br>
-Ha cominciato a studiare Python per diletto, guidato da una curiosità
-apparentemente innocua, ma negli anni ha fatto sempre più fatica a
-tenerlo fuori dalla sua vita lavorativa, e oggi lo usa senza più
-ritegno.</h4>
+	    <h4><b>Mauro Esposito</b>, di origini Napoletane è impiegato presso una società di consulenza informatica. <br>
+      Da pochi anni si è affacciato sul mondo Python. Appassionato di droni, robotica, elettronica, stampa 3d, IoT e machine learning.</h4>
         <hr> 
 	    <h2><b>Location</b></h2> 
-      <h4><b>Linux User Group Reggio Emilia<br />
-      Via Statuto 2<br />
+      <h4><b>IMPACT HUB<br />
+      Via Statuto 3<br />
       Reggio Emilia</b></h4>
       <div class="col-md-12" id="map"></div>
-
+      <hr>
+      <h2><b>Risorse</b></h2> 
+      <h4>Slides: <a href="http://www.mauroesposito.it/pyre/Micropython_PyRE_20170228.pdf" target="_blank">http://www.mauroesposito.it/pyre/Micropython_PyRE_20170228.pdf</a></h4>
+      <h4>Codice: <a href="https://github.com/mauroesposito/micropython_pyre" target="_blank">https://github.com/mauroesposito/micropython_pyre</a></h4>
             </div>
       </div><!--/row-->
     </div><!--/container-->
@@ -121,7 +96,7 @@ ritegno.</h4>
                 function init() {
                     var mapOptions = {
                         zoom: 14,
-                        center: new google.maps.LatLng(44.692633, 10.633719),
+                        center: new google.maps.LatLng(44.692526, 10.633562),
 
                         // How you would like to style the map.
                         // Stile copia-incollato da Snazzy Maps.
@@ -132,12 +107,13 @@ ritegno.</h4>
                     var map = new google.maps.Map(mapElement, mapOptions);
 
                     var marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(44.692633, 10.633719),
+                        position: new google.maps.LatLng(44.692526, 10.633562),
                         map: map,
                         title: 'Siamo qui!'
                     });
                 }
         })();
+        $('.navbar').addClass('solid');
         </script>
   </body>
 </html>

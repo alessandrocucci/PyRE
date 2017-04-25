@@ -37,11 +37,9 @@
       <div class="container transparent">
         <div class="row centered">
           <div class="col-md-8 col-md-offset-2">
-              <h2><b>PyRE e RELUG presentano:</b></h2>
-              <img src="/static/img/main/pandas_logo.png">
-              <h1>Quando il saggio indica il cielo, <b>Pandas</b> guarda l'indice</h1>
-            <h2>Martedí 09 Maggio 2017 h20:00</h2>
-	    <h3>Via Statuto 2 - Reggio Emilia</h3>
+		  <h1><b>REST API, prototipazione rapida<br />con Flask e SqlAlchemy</b></h1>
+            <h2>Mercoledí 11 Gennaio 2017 h19:00</h2>
+	    <h3>Impact HUB Reggio Emilia</h3>
           </div><!--/col-md-8-->
         </div>
       </div>
@@ -51,48 +49,27 @@
         <div class="col-md-12 centered">
 
         <h2><b>Sommario</b></h2>
-	<h4>Introduzione alla libreria pandas per la gestione ed analisi di dati.
-        Il tutorial ruoterà attorno agli indici, che sono lo strumento fondamentale che rende
-        questa libreria uno strumento così pandastico per la gestione dei dati.
-        <br>
-        Anche se non si presume alcuna conoscenza della libreria stessa, sarà utile avere una
-        certa esperienza con numpy - comunque non strettamente necessaria.</h4>
+	<h4>Per il primo incontro del PyRE si é scelto un argomento che negli ultimi anni ha avuto ampia diffusione in campo IT: i web service di tipo <b>REST</b>.
+	    Nel corso della serata verrá illustrato un esempio pratico di come iniziare lo sviluppo di un'applicazione REST lato server, utilizzando strumenti 
+	    ormai noti nel panorama Python: <b>Flask</b>, un microframework che permette la realizzazione in poche righe di codice di un'app server side, e <b>SqlAlchemy</b>,
+	    un ORM che useremo per l'accesso e la manipolazione dei dati usando un linguaggio pythonico, senza la preoccupazione di dover fare delle query custom.</h4>
       <hr>
-            <h4><b>Requisiti</b>
-<br>
-Per seguire il tutorial dovrete avere installati:
-<ul>
-    <li>Python 3 (preferibilmente 3.5.x o successivo)</li>
-    <li>numpy versione 1.10 o successiva: <a href="http://www.numpy.org/" target="_blank">http://www.numpy.org/</a></li>
-    <li>pandas versione 0.16 o successiva: <a href="http://pandas.pydata.org" target="_blank">http://pandas.pydata.org</a></li>
-    <li>matplotlib</li>
-    <li>(già che ci siete, scipy e pytables non faranno male)</li>
-</ul>
-<br>
-    Inoltre è caldamente raccomandata (anche a prescindere da questo tutorial!) l’installazione dei notebook ipython/jupyter.
-
-    Tutto ciò si può trovare negli archivi ufficiali Debian testing o Ubuntu >= 16.04:
-     pacchetti python3-pandas, python3-numpy, python3-matplotlib e jupyter-notebook (o ipython-notebook).
-                Oppure si può installare con pip o con conda/anaconda, come indicato <a href="http://jupyter.org/install.html" target="_blank">qui</a> e <a href="http://pandas.pydata.org/" target="_blank">qui</a>.
-                </h4>
-      <hr>
-	    <h2><b>Livello</b></h2><h4>Base</h4>
+	    <h2><b>Livello</b></h2><h4>Basso/Intermedio</h4>
       <hr>
 	<h2><b>Speaker</b></h2>
-	    <h4><b>Pietro Battiston</b>, Ex-quasi-matematico, poi (s)venduto al lato oscuro della forza
-(economia), oggi ricercatore (in transito).
-<br>
-Ha cominciato a studiare Python per diletto, guidato da una curiosità
-apparentemente innocua, ma negli anni ha fatto sempre più fatica a
-tenerlo fuori dalla sua vita lavorativa, e oggi lo usa senza più
-ritegno.</h4>
+	    <h4><b>Alessandro Cucci</b>, 31 anni, lavora attualmente come Python Developer presso Energee3 srl, azienda di consulenza informatica con sedi a Reggio Emilia, Milano, Torino e Roma.
+		    In Energee é Responsabile di Competenza per il linguaggio Python, si occupa della formazione ai nuovi tirocinanti/tesisti/neo-assunti, offre supporto tecnico ai developer Python, gestisce la revisione del codice Python aziendale.<br />
+		    In ambito community, é attivo come Contributor per la Python Software Foundation, nel 2016 ha rilasciato due patch per la release 3.6 di Python. <br />Tra i suoi interessi, l'utilizzo di Python nel campo dell'IoT, Machine Learning e Big Data.</h4>
         <hr> 
 	    <h2><b>Location</b></h2> 
-      <h4><b>Linux User Group Reggio Emilia<br />
-      Via Statuto 2<br />
+      <h4><b>IMPACT HUB<br />
+      Via Statuto 3<br />
       Reggio Emilia</b></h4>
       <div class="col-md-12" id="map"></div>
-
+      <hr>
+      <h2><b>Risorse</b></h2> 
+      <h4>Slides: <a href="http://www.alessandrocucci.it/pyre/restapi" target="_blank">http://www.alessandrocucci.it/pyre/restapi</a></h4>
+      <h4>Codice: <a href="https://goo.gl/4UOqEr" target="_blank">https://goo.gl/4UOqEr</a></h4>
             </div>
       </div><!--/row-->
     </div><!--/container-->
@@ -121,7 +98,7 @@ ritegno.</h4>
                 function init() {
                     var mapOptions = {
                         zoom: 14,
-                        center: new google.maps.LatLng(44.692633, 10.633719),
+                        center: new google.maps.LatLng(44.692526, 10.633562),
 
                         // How you would like to style the map.
                         // Stile copia-incollato da Snazzy Maps.
@@ -132,7 +109,7 @@ ritegno.</h4>
                     var map = new google.maps.Map(mapElement, mapOptions);
 
                     var marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(44.692633, 10.633719),
+                        position: new google.maps.LatLng(44.692526, 10.633562),
                         map: map,
                         title: 'Siamo qui!'
                     });
