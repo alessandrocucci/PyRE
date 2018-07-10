@@ -14,7 +14,7 @@ $(window).scroll(function() {
 		    "showMethod": "fadeIn",
 		    "hideMethod": "fadeOut"
 		};
-		toastr.options.onclick = function() { window.location.assign("https://github.com/alessandrocucci/PyRE"); };
+		toastr.options.onclick = function() { window.location.assign("https://github.com/pyreit/PyRE"); };
 		toastr.success('Scopri come abbiamo sviluppato questo sito!', 'How it is made');
 	  }
 });
